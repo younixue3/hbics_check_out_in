@@ -269,6 +269,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       backgroundColor:
                                           MaterialStateProperty.all(
                                         Color.fromARGB(255, 247, 185, 23),
+                                        // Colors.redAccent,
                                       ),
                                     ),
                                   ),
@@ -306,46 +307,28 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   MainAxisAlignment
                                                       .spaceBetween,
                                               children: [
-                                                Container(
-                                                  margin:
-                                                      EdgeInsets.only(right: 5),
-                                                  height: 45,
-                                                  width: 45,
-                                                  decoration: BoxDecoration(
-                                                    gradient: LinearGradient(
-                                                      begin: Alignment.topLeft,
-                                                      end:
-                                                          Alignment.bottomRight,
-                                                      colors: [
-                                                        Colors.purple,
-                                                        Colors.blue
-                                                      ],
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10),
-                                                  ),
-                                                  child: Icon(
-                                                    Icons.shopping_cart,
-                                                    size: 30,
-                                                    color: Colors.white,
-                                                  ),
-                                                ),
                                                 Column(
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
                                                   children: [
-                                                    Text(
-                                                      "Order",
-                                                      textAlign:
-                                                          TextAlign.start,
-                                                      style: TextStyle(
+                                                    Container(
+                                                      width: 150,
+                                                      child: Text(
+                                                        "Istirahat ad asd asda sda d",
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
+                                                        textAlign:
+                                                            TextAlign.start,
+                                                        style: TextStyle(
                                                           fontFamily: 'Lexend',
                                                           fontWeight:
-                                                              FontWeight.w600),
+                                                              FontWeight.w600,
+                                                          fontSize: 17,
+                                                        ),
+                                                      ),
                                                     ),
                                                     Text(
-                                                      "This Day",
+                                                      "Thursday, January 2022",
                                                       textAlign:
                                                           TextAlign.start,
                                                       style: TextStyle(
