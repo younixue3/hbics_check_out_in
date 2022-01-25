@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';
 
-import 'card/CardRecentPermission.dart';
-import 'card/CardListPermission.dart';
 import 'layout/NavBar.dart';
+import 'page/HomePage.dart';
+import 'page/FormPage.dart';
+import 'routes/router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,11 +18,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: Routers.appRouter,
       title: 'Flutter Demo',
       theme: ThemeData(
           appBarTheme: AppBarTheme(color: Color.fromARGB(255, 38, 77, 161)),
           scaffoldBackgroundColor: Color.fromARGB(255, 228, 238, 255)),
       home: const MyHomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomePage(),
+        '/form-page': (context) => FormPage()
+      },
     );
   }
 }
@@ -107,20 +114,43 @@ class _MyHomePageState extends State<MyHomePage> {
             // flexibleSpace:
           ),
           SliverToBoxAdapter(
-              child: Container(
-            height: 800,
-            margin: EdgeInsets.only(top: 20),
-            padding: EdgeInsets.symmetric(horizontal: 40),
-            child: Column(
-              children: [
-                Container(
-                  child: Column(
-                    children: [CardRecentlyPermission(), CardListPermissions()],
-                  ),
-                ),
-              ],
+            child: Container(
+              height: 800,
+              margin: EdgeInsets.only(top: 20),
+              padding: EdgeInsets.symmetric(horizontal: 40),
+              child: Navigator(
+                onGenerateRoute: (settings) {
+                  Widget page;
+                  if (settings.name == '/') {
+                    page = HomePage();
+                  } else if (settings.name == 'routeFormPage') {
+                    page = FormPage();
+                  } else {
+                    throw Exception('Unknow Route: ${settings.name}');
+                  }
+
+                  return MaterialPageRoute<dynamic>(
+                    builder: (context) {
+                      return page;
+                    },
+                    settings: settings,
+                  );
+                },
+              ),
+              // child: Column(
+              //   children: [
+              //     Container(
+              //       child: Column(
+              //         children: [
+              //           CardRecentlyPermission(),
+              //           CardListPermissions()
+              //         ],
+              //       ),
+              //     ),
+              //   ],
+              // ),
             ),
-          ))
+          )
         ],
       ),
     );

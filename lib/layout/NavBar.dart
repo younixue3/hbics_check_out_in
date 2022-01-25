@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../page/FormPage.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -36,7 +37,12 @@ class _NavBarState extends State<NavBar> {
                   IconButton(
                     splashColor: Colors.white54,
                     splashRadius: 32,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => FormPage()),
+                      );
+                    },
                     icon: Icon(
                       Icons.drive_file_rename_outline_rounded,
                       color: Colors.white60,
