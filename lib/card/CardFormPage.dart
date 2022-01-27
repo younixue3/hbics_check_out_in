@@ -50,8 +50,44 @@ class _CardFormPageState extends State<CardFormPage> {
                       decoration: InputDecoration(border: null),
                       style: TextStyle(fontSize: 20),
                     ),
-                  )
+                  ),
                 ],
+              ),
+            ),
+            Container(
+              width: 150,
+              child: TextButton(
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                  ),
+                  backgroundColor: MaterialStateProperty.all(
+                    Color.fromARGB(255, 247, 185, 23),
+                    // Colors.redAccent,
+                  ),
+                ),
+                onPressed: () {},
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Send Order',
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                      Icon(
+                        Icons.input_rounded,
+                        color: Colors.white,
+                      )
+                    ],
+                  ),
+                ),
               ),
             )
           ],
