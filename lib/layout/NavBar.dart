@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../page/FormPage.dart';
+import '../routes/router.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -9,6 +10,7 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
+  final AppRouter = GlobalKey<NavigatorState>();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,9 +40,9 @@ class _NavBarState extends State<NavBar> {
                     splashColor: Colors.white54,
                     splashRadius: 32,
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushNamed(
                         context,
-                        MaterialPageRoute(builder: (context) => FormPage()),
+                        '/formPage',
                       );
                     },
                     icon: Icon(
