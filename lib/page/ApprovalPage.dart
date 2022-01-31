@@ -53,7 +53,6 @@ class ApprovalPage extends StatelessWidget {
           ),
           SliverToBoxAdapter(
             child: Container(
-              height: 800,
               margin: EdgeInsets.only(top: 20),
               padding: EdgeInsets.symmetric(horizontal: 10),
               child: Column(

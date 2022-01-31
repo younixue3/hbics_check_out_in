@@ -12,51 +12,219 @@ class _CardApprovalState extends State<CardApproval> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
-      width: 400,
-      child: Row(
+      width: 500,
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Card(
-            color: Color.fromARGB(255, 20, 50, 88),
+            color: Colors.white,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
             ),
             child: Container(
-                width: 300,
-                padding: EdgeInsetsDirectional.all(5),
-                child: Column(
+                width: 500,
+                child: Row(
                   children: [
-                    Text(
-                      'Ricko Tiaka',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    Container(
-                      height: 40,
-                      child: CarouselSlider(
-                        options: CarouselOptions(
-                          reverse: false,
-                          enableInfiniteScroll: false,
-                          pageViewKey:
-                              PageStorageKey<String>('carousel_slider'),
-                        ),
-                        items: [
+                    // Icon(Icons.search),
+                    TextField(
+                        decoration: InputDecoration(border: InputBorder.none)),
+                  ],
+                )),
+          ),
+          Card(
+            color: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Container(
+              width: 500,
+              padding: EdgeInsetsDirectional.all(10),
+              child: Column(
+                children: [
+                  TextButton(
+                    style: ButtonStyle(
+                        overlayColor: MaterialStateProperty.all(
+                            Color.fromARGB(50, 73, 114, 209)),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(15)))),
+                    onPressed: () {},
+                    child: Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
                           Container(
-                            height: 40,
-                            width: 40,
+                            width: 50,
+                            height: 50,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(80),
                                 image: DecorationImage(
                                     fit: BoxFit.cover,
                                     image: AssetImage(
                                         'assets/public/57774948_2440392989306240_790466375524024320_n.jpg'))),
+                          ),
+                          Container(
+                            width: 220,
+                            margin: EdgeInsets.only(left: 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Ricko Tiaka',
+                                  style: TextStyle(
+                                      fontSize: 18, color: Colors.black),
+                                ),
+                                Text(
+                                  'Web Developer',
+                                  style: TextStyle(
+                                      fontSize: 14, color: Colors.black),
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            width: 40,
+                            margin: EdgeInsets.only(left: 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(Icons.check_circle),
+                                  color: Colors.green,
+                                )
+                              ],
+                            ),
                           )
                         ],
                       ),
-                    )
-                  ],
-                )),
+                    ),
+                  ),
+                  TextButton(
+                    style: ButtonStyle(
+                        overlayColor: MaterialStateProperty.all(
+                            Color.fromARGB(50, 73, 114, 209)),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(15)))),
+                    onPressed: () {},
+                    child: Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 50,
+                            height: 50,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(80),
+                                image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(
+                                        'assets/public/57774948_2440392989306240_790466375524024320_n.jpg'))),
+                          ),
+                          Container(
+                            width: 220,
+                            margin: EdgeInsets.only(left: 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Ricko Tiaka',
+                                  style: TextStyle(
+                                      fontSize: 18, color: Colors.black),
+                                ),
+                                Text(
+                                  'Web Developer',
+                                  style: TextStyle(
+                                      fontSize: 14, color: Colors.black),
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            width: 40,
+                            margin: EdgeInsets.only(left: 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(Icons.check_circle),
+                                  color: Colors.green,
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  TextButton(
+                    style: ButtonStyle(
+                        overlayColor: MaterialStateProperty.all(
+                            Color.fromARGB(50, 73, 114, 209)),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(15)))),
+                    onPressed: () {},
+                    child: Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 50,
+                            height: 50,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(80),
+                                image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(
+                                        'assets/public/57774948_2440392989306240_790466375524024320_n.jpg'))),
+                          ),
+                          Container(
+                            width: 220,
+                            margin: EdgeInsets.only(left: 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Ricko Tiaka',
+                                  style: TextStyle(
+                                      fontSize: 18, color: Colors.black),
+                                ),
+                                Text(
+                                  'Web Developer',
+                                  style: TextStyle(
+                                      fontSize: 14, color: Colors.black),
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            width: 40,
+                            margin: EdgeInsets.only(left: 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(Icons.check_circle),
+                                  color: Colors.green,
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
           ),
         ],
       ),
