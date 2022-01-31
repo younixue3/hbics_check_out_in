@@ -24,10 +24,7 @@ class MyApp extends StatelessWidget {
           appBarTheme: AppBarTheme(color: Color.fromARGB(255, 38, 77, 161)),
           scaffoldBackgroundColor: Color.fromARGB(255, 228, 238, 255)),
       // home: const MyHomePage(),
-      routes: {
-        '/': (context) => HomePage(),
-        '/formPage': (context) => FormPage()
-      },
+      routes: Routers.dataRouter,
     );
   }
 }

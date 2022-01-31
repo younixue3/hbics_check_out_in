@@ -54,7 +54,12 @@ class _NavBarState extends State<NavBar> {
                   IconButton(
                     splashColor: Colors.white54,
                     splashRadius: 32,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(
+                        context,
+                        '/formAprroval',
+                      );
+                    },
                     icon: Icon(
                       Icons.list_rounded,
                       color: Colors.white60,
