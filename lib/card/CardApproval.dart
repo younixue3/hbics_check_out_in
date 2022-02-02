@@ -5,19 +5,23 @@ import 'package:carousel_slider/carousel_slider.dart';
 import '../component/ListStaff.dart';
 
 class DataListStaff with ChangeNotifier {
+  // var ArrStaff = {
+  //   {
+  //     'image': '57774948_2440392989306240_790466375524024320_n.jpg',
+  //     'name': 'Ricko Tiaka',
+  //     'position': 'Web Developer',
+  //     'status': false
+  //   },
+  //   {
+  //     'image': '57774948_2440392989306240_790466375524024320_n.jpg',
+  //     'name': 'Ricko Tiaka',
+  //     'position': 'Web Developer',
+  //     'status': false
+  //   }
+  // };
   var ArrStaff = {
-    {
-      'image': '57774948_2440392989306240_790466375524024320_n.jpg',
-      'name': 'Ricko Tiaka',
-      'position': 'Web Developer',
-      'status': false
-    },
-    {
-      'image': '57774948_2440392989306240_790466375524024320_n.jpg',
-      'name': 'Ricko Tiaka',
-      'position': 'Web Developer',
-      'status': false
-    }
+    {'name': 'Ricko'},
+    {'name': 'Ricky'}
   };
 }
 
@@ -29,7 +33,7 @@ class CardApproval extends StatefulWidget {
 }
 
 class _CardApprovalState extends State<CardApproval> {
-
+  var Arraynya = DataListStaff().ArrStaff;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -62,17 +66,15 @@ class _CardApprovalState extends State<CardApproval> {
             child: Container(
               width: 500,
               padding: EdgeInsetsDirectional.all(10),
-              child: Column(children:  <Widget>[
-                for (var item in DataListStaff().ArrStaff) ListStaff(item['image'], item['name'], item['position'], item['status'])
-              ]
-                // children: [
-                //   for (var item in DataListStaff().ArrStaff)
-                //     ListStaff(
-                //       '',
-                //       '',
-                //       '',
-                //       true,
-                //     )
+              child: Column(
+                children: [
+                  for (final i in Arraynya)
+                    ListStaff(
+                      i,
+                      i,
+                      i,
+                      true,
+                    )
                   // ListStaff(
                   //     '57774948_2440392989306240_790466375524024320_n.jpg',
                   //     'Ricko Tianaka',
