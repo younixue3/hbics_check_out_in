@@ -5,6 +5,13 @@ import '../card/CardApproval.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';
 
+// class ListStaff {
+//   bool status = false;
+//   void getStaff() {
+//     status = true;
+//   }
+// }
+
 class ApprovalPage extends StatelessWidget {
   const ApprovalPage({Key? key}) : super(key: key);
 
