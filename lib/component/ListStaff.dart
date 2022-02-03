@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../routes/router.dart';
+import '../page/DetailApprovalPage.dart';
 
 class ListStaff extends StatelessWidget {
   // const ListStaff({Key? key}) : super(key: key);
@@ -17,7 +19,16 @@ class ListStaff extends StatelessWidget {
               MaterialStateProperty.all(Color.fromARGB(50, 73, 114, 209)),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)))),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.pushNamed(
+          context,
+          '/detailApproval',
+          arguments: ScreenArguments(
+            name,
+            image,
+          ),
+        );
+      },
       child: Container(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

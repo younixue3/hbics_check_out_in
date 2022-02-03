@@ -10,7 +10,6 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-  final AppRouter = GlobalKey<NavigatorState>();
   @override
   Widget build(BuildContext context) {
     return Container(

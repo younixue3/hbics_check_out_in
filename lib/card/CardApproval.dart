@@ -2,6 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
+
 import '../component/ListStaff.dart';
 
 class DataListStaff with ChangeNotifier {
@@ -19,10 +22,6 @@ class DataListStaff with ChangeNotifier {
   //     'status': false
   //   }
   // };
-  var ArrStaff = {
-    {'name': 'Ricko'},
-    {'name': 'Ricky'}
-  };
 }
 
 class CardApproval extends StatefulWidget {
@@ -33,7 +32,22 @@ class CardApproval extends StatefulWidget {
 }
 
 class _CardApprovalState extends State<CardApproval> {
-  var Arraynya = DataListStaff().ArrStaff;
+  // var arrStaff = {
+  //   {'nama': 'Ricko'}, {'nama': 'ricky'}
+  //   // {
+  //   //   'image': '57774948_2440392989306240_790466375524024320_n.jpg',
+  //   //   'nama': 'Ricko Tiaka',
+  //   //   'position': 'Web Developer',
+  //   //   'status': '1'
+  //   // },
+  //   // {
+  //   //   'image': '57774948_2440392989306240_790466375524024320_n.jpg',
+  //   //   'nama': 'Ricky Tiaka',
+  //   //   'position': 'Web Developer',
+  //   //   'status': '1'
+  //   // },
+  // };
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -48,7 +62,7 @@ class _CardApprovalState extends State<CardApproval> {
               borderRadius: BorderRadius.circular(15),
             ),
             child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10),
+                padding: EdgeInsets.symmetric(horizontal: 20),
                 width: 500,
                 child: TextField(
                   style: TextStyle(fontSize: 15),
@@ -68,28 +82,21 @@ class _CardApprovalState extends State<CardApproval> {
               padding: EdgeInsetsDirectional.all(10),
               child: Column(
                 children: [
-                  for (final i in Arraynya)
-                    ListStaff(
-                      i,
-                      i,
-                      i,
-                      true,
-                    )
-                  // ListStaff(
-                  //     '57774948_2440392989306240_790466375524024320_n.jpg',
-                  //     'Ricko Tianaka',
-                  //     'Web Developer',
-                  //     true),
-                  // ListStaff(
-                  //     '57774948_2440392989306240_790466375524024320_n.jpg',
-                  //     'Rikhi Angry',
-                  //     'Graphic Designer',
-                  //     false),
-                  // ListStaff(
-                  //     '57774948_2440392989306240_790466375524024320_n.jpg',
-                  //     'Ryan Dzul',
-                  //     'Video Editor',
-                  //     true),
+                  ListStaff(
+                      '57774948_2440392989306240_790466375524024320_n.jpg',
+                      'Ricko Tianaka',
+                      'Web Developer',
+                      true),
+                  ListStaff(
+                      '57774948_2440392989306240_790466375524024320_n.jpg',
+                      'Rikhi Angry',
+                      'Graphic Designer',
+                      false),
+                  ListStaff(
+                      '57774948_2440392989306240_790466375524024320_n.jpg',
+                      'Ryan Dzul',
+                      'Video Editor',
+                      true),
                 ],
               ),
             ),

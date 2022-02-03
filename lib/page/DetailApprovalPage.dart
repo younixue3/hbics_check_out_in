@@ -1,39 +1,13 @@
 import 'package:flutter/material.dart';
-
 import '../layout/NavBar.dart';
-import '../card/CardApproval.dart';
+import '../card/CardFormPage.dart';
 
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert' as convert;
-
-// class ListStaff {
-//   bool status = false;
-//   void getStaff() {
-//     status = true;
-//   }
-// }
-void main(List<String> args) async {
-  var url =
-      Uri.https('www.googleapis.com', '/books/v1/volumes', {'q': '{http}'});
-
-  // Await the http get response, then decode the json-formatted response.
-  var response = await http.get(url);
-  if (response.statusCode == 200) {
-    var jsonResponse =
-        convert.jsonDecode(response.body) as Map<String, dynamic>;
-    var itemCount = jsonResponse['totalItems'];
-    print('Number of books about http: $itemCount.');
-  } else {
-    print('Request failed with status: ${response.statusCode}.');
-  }
-}
-
-class ApprovalPage extends StatelessWidget {
-  const ApprovalPage({Key? key}) : super(key: key);
+class DetailApprovalPage extends StatelessWidget {
+  const DetailApprovalPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
     return Scaffold(
       body: CustomScrollView(
         slivers: [
@@ -41,7 +15,7 @@ class ApprovalPage extends StatelessWidget {
             floating: false,
             pinned: false,
             snap: false,
-            expandedHeight: 50,
+            expandedHeight: 200,
             flexibleSpace: FlexibleSpaceBar(
               background: Wrap(
                 crossAxisAlignment: WrapCrossAlignment.end,
@@ -70,6 +44,35 @@ class ApprovalPage extends StatelessWidget {
                       ],
                     ),
                   ),
+                  Container(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(top: 50),
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          child: Text(
+                            args.nama,
+                            style: TextStyle(
+                              fontSize: 30,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        Stack(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(top: 120),
+                              color: Color.fromARGB(255, 228, 238, 255),
+                              height: 100,
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -77,13 +80,14 @@ class ApprovalPage extends StatelessWidget {
           ),
           SliverToBoxAdapter(
             child: Container(
+              height: 800,
               margin: EdgeInsets.only(top: 20),
               padding: EdgeInsets.symmetric(horizontal: 10),
               child: Column(
                 children: [
                   Container(
                     child: Column(
-                      children: [CardApproval()],
+                      children: [CardFormPage()],
                     ),
                   ),
                 ],
@@ -94,4 +98,11 @@ class ApprovalPage extends StatelessWidget {
       ),
     );
   }
+}
+
+class ScreenArguments {
+  final String nama;
+  final String pic;
+
+  ScreenArguments(this.nama, this.pic);
 }

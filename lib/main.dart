@@ -7,6 +7,9 @@ import 'layout/NavBar.dart';
 import 'page/HomePage.dart';
 import 'page/FormPage.dart';
 import 'routes/router.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
+import 'dart:convert';
 
 void main() => runApp(
       ChangeNotifierProvider(
@@ -14,6 +17,26 @@ void main() => runApp(
         child: MyApp(),
       ),
     );
+// void main(List<String> args) async {
+//   String username = 'admin';
+//   String password = '11O14T15l';
+//   String basicAuth =
+//       'Basic ' + base64Encode(utf8.encode('$username:$password'));
+//   print(basicAuth);
+//   var url = Uri.http('10.0.2.2:8000', '/users');
+
+//   // Await the http get response, then decode the json-formatted response.
+//   var response = await http
+//       .get(url, headers: <String, String>{'authorization': basicAuth});
+//   if (response.statusCode == 200) {
+//     var jsonResponse =
+//         convert.jsonDecode(response.body) as Map<String, dynamic>;
+//     var item = jsonResponse[1];
+//     print('Number of books about http: $item.');
+//   } else {
+//     print('Request failed with status: ${response.statusCode}.');
+//   }
+// }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -62,7 +85,7 @@ class MyApp extends StatelessWidget {
 //                     child: Row(
 //                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //                       children: [
-//                         Container(
+//                         Container(5
 //                           height: 40,
 //                           width: 40,
 //                           decoration: BoxDecoration(
